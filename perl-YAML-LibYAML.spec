@@ -1,5 +1,5 @@
 %define upstream_name    YAML-LibYAML
-%define upstream_version 0.32
+%define upstream_version 0.33
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
