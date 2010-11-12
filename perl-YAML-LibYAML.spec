@@ -1,9 +1,9 @@
 %define upstream_name    YAML-LibYAML
-%define upstream_version 0.33
+%define upstream_version 0.34
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    An XS Wrapper Module of libyaml
 License:    GPL+ or Artistic
