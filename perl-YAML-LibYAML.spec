@@ -1,5 +1,5 @@
 %define upstream_name    YAML-LibYAML
-%define upstream_version 0.34
+%define upstream_version 0.35
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -10,7 +10,7 @@ License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/YAML/%{upstream_name}-%{upstream_version}.tar.gz
-Patch0:     YAML-LibYAML-0.32-mdv-format-error.patch
+Patch0:     YAML-LibYAML-0.35-fix-format-errors.patch
 
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(Filter::Util::Call)
@@ -30,7 +30,7 @@ intended to work exactly like 'YAML.pm''s corresponding functions.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%patch0 -p0 -b .format-error
+%patch0 -p1 -b .format-error
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
