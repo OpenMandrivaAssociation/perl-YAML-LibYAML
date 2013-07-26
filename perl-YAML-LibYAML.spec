@@ -1,20 +1,21 @@
-%define upstream_name YAML-LibYAML
-%define upstream_version 0.38
+%define upstream_name    YAML-LibYAML
+%define upstream_version 0.41
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version 0.41
+Release:	1
 
-Summary:	An XS Wrapper Module of libyaml
-License:	GPL+ or Artistic
-Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/YAML/%{upstream_name}-%{upstream_version}.tar.gz
-Patch0:		YAML-LibYAML-0.35-fix-format-errors.patch
+Summary:    An XS Wrapper Module of libyaml
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/YAML/YAML-LibYAML-0.41.tar.gz
+Patch0:     YAML-LibYAML-0.35-fix-format-errors.patch
 
-BuildRequires:	perl(ExtUtils::MakeMaker)
-BuildRequires:	perl(Filter::Util::Call)
-BuildRequires:	perl-devel
+BuildRequires: perl(ExtUtils::MakeMaker)
+BuildRequires: perl(Filter::Util::Call)
+BuildRequires: perl-devel
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Kirill Siminov's 'libyaml' is arguably the best YAML implementation. The C
@@ -39,12 +40,17 @@ intended to work exactly like 'YAML.pm''s corresponding functions.
 make test
 
 %install
+rm -rf %buildroot
 %makeinstall_std
 
+%clean
+rm -rf %buildroot
+
 %files
+%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%{perl_vendorlib}/*
+%perl_vendorlib/*
 
 
 
@@ -78,4 +84,5 @@ make test
 
 * Sat May 30 2009 cpan2dist 0.32-1mdv
 - initial mdv release, generated with cpan2dist
+
 
