@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version 0.41
-Release:	2
+Release:	3
 
 Summary:    An XS Wrapper Module of libyaml
 License:    GPL+ or Artistic
