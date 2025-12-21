@@ -12,6 +12,7 @@ Url:        https://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/YAML/YAML-LibYAML-0.41.tar.gz
 Patch0:     YAML-LibYAML-0.35-fix-format-errors.patch
 
+BuildRequires:	make
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(Filter::Util::Call)
 BuildRequires: perl-devel
