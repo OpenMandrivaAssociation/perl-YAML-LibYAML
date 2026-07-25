@@ -1,15 +1,15 @@
 %define upstream_name    YAML-LibYAML
-%define upstream_version 0.41
+%define upstream_version v0.910.0
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version 0.41
-Release:	3
+Version:    %{upstream_version}
+Release:	1
 
 Summary:    An XS Wrapper Module of libyaml
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/YAML/YAML-LibYAML-0.41.tar.gz
+Url:        https://github.com/ingydotnet/yaml-libyaml-pm
+Source0:    https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-v0.910.0.tar.gz
 Patch0:     YAML-LibYAML-0.35-fix-format-errors.patch
 
 BuildRequires:	make
